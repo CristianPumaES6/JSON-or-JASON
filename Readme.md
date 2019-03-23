@@ -81,7 +81,7 @@ dataAuto.length;
 // Agregaremos un object al arreglo dataAuto con el comando .push()
 dataAuto.push(oAuto);
 
-// Ahora nuestro objeto se ve asi.
+// Ahora nuestro arreglo se ve asi.
 var dataAuto = [
     {
         modelo : "BMW",
@@ -100,9 +100,9 @@ var oAuto = new Object();
 
 oAuto.modelo = "Toyota";
 oAuto.marca = "Corolla 18";
-oAuto.color = ["red","blue"];
+oAuto.color = ["Red","Blue"];
 oAuto.anio = 2020;
-oAuto.foto = "";
+oAuto.foto = "https://m.media-amazon.com/images/I/712-mbJHZqL._UY560_.jpg";
 
 dataAuto.push(oAuto);
 
@@ -110,7 +110,7 @@ dataAuto.push(oAuto);
 var oAuto = new Object();
 oAuto.modelo = "Suzuki";
 oAuto.marca = "Ignis";
-oAuto.color = ["red","Platiado"];
+oAuto.color = ["Red","Silver"];
 oAuto.anio = 2017;
 oAuto.foto = "https://www.telegraph.co.uk/content/dam/motoring2/2015/12/01/vitara-main-xlarge_trans_NvBQzQNjv4BqpiVx42joSuAkZ0bE9ijUnGH28ZiNHzwg9svuZLxrn1U.jpg?imwidth=1400";
 
@@ -119,7 +119,7 @@ dataAuto.push(oAuto);
 var oAuto = new Object();
 oAuto.modelo = "Volkswagen";
 oAuto.marca = "California";
-oAuto.color = ["red","Platiado"];
+oAuto.color = ["Red","Silver"];
 oAuto.anio = 2015;
 oAuto.foto = "https://www.autobild.es/sites/autobild.es/public/styles/main_element/public/dc/fotos/Volkswagen_California_T6_2016_C01.jpg?itok=ZSYMIqFY";
 
