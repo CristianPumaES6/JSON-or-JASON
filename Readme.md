@@ -2,6 +2,8 @@
 
 Aunque su nombre lo diga, no es necesariamente parte de JavaScript, de hecho ***es un estándar basado en texto plano para el intercambio de información.*** Por lo que se usa en muchos sistemas que requieren mostrar o enviar información.
 
+![alt text](./src/bs/json-serialize-killer.jpg) 
+
 ***La ventaja de JSON*** al ser un formato que es independiente de cualquier lenguaje de programación, ***es que los servicios que comparten información por éste método, no necesitan hablar el mismo idioma, es decir, el emisor puede ser Java y el receptor PHP***, cada lenguaje tiene su propia librería para codificar y decodificar cadenas de JSON.
 
 ###### Resumen: JSON (JavaScript Object Notation) es un estándar basado en texto plano para el intercambio de información. La ventaja de JSON es que los servicios que comparten información por éste método, no necesitan hablar el mismo idioma, es decir, el emisor puede ser Java y el receptor PHP
@@ -25,9 +27,9 @@ oAuto.foto = "https://a.ccdn.es/cnet/2018/12/15/36518241/166250105_g.jpg";
 typeof(oAuto);// Object
 ```
 
-Hasta este punto podemos ver que oAuto es de tipo Object ¿Entonces no es un JSON? JSON es un formato de texto sencillo para el intercambio de datos. 
+Hasta este punto, podemos ver que oAuto es de tipo Object ¿Entonces no es un JSON? JSON es un formato de texto sencillo para el intercambio de datos. 
 
-Asi se ve nuestro objeto :
+Así se ve nuestro objeto :
 
 ```js
 var oAuto = {
@@ -68,17 +70,18 @@ typeof(jsonAuto)
 
 ## Como crear una data JSON
 
-Bueno para esto es necesario saber como funciona un arreglo. pero sigamos:
+Para esto es necesario saber como funciona un arreglo. como funciona .push() .length
 
 ```js
 // Crearemos un arreglo que contendrá a todos los autos.
 var dataAuto = new Array();
 dataAuto.length;
-// La consola nos arroja  por que el array esta vacio 0, ahora hacemos 
+// La consola nos arroja 0 por que el array esta vacio.
 ```
 
+Agregaremos un object al arreglo dataAuto con el comando .push()
+
 ```js
-// Agregaremos un object al arreglo dataAuto con el comando .push()
 dataAuto.push(oAuto);
 
 // Ahora nuestro arreglo se ve asi.
@@ -91,11 +94,13 @@ var dataAuto = [
         foto : "https://a.ccdn.es/cnet/2018/12/15/36518241/166250105_g.jpg"
     }
 ]
-dataAuto.length; // 1
+
+//si probamos el .length nos arrojara 1
+dataAuto.length;
 ```
 
 ```JavaScript
-// Agregaremos mas objetos al arreglo dataAuto
+// Agregaremos mas objetos al arreglo dataAuto.
 var oAuto = new Object();
 
 oAuto.modelo = "Toyota";
@@ -141,14 +146,14 @@ dataAuto.push(oAuto);
     var stringJSON = JSON.stringify(dataAuto);    
 ```
 
-¿Como volvemos un un String JSON a un objeto JSON? 
+¿Como volvemos un String JSON a un objeto JSON? 
 
 ``` js
     var objectJSON = JSON.parse(stringJSON);    
 ```
 
 ## BREAK : ## 
-Gracias por seguir leyendo ayer fue viernes y saliendo del trabajo me parecio buena idea hacer un resumen de como se trabaja con un objeto JSON, si puedes contribuir no dudes en mandame un Pull requests. Gracias, sigamos .......
+Gracias por seguir leyendo ayer fue viernes 22 y saliendo del trabajo me parecio buena idea hacer un resumen de como se trabaja con un objeto JSON, si puedes contribuir no dudes en mandame un Pull requests. Gracias, sigamos. .......
 
 
 
@@ -172,9 +177,7 @@ Dentro de cada posicion del arreglo tenemos un objeto el cual tiene las siguient
     } 
 ```
 
-Entonces como accedemos al valor de la propieda de un auto?
-
-- por posicion y nombre de la propiedad 
+Entonces como accedemos al valor de la propiedad de un auto? **por posicion y nombre de la propiedad**
 
 ``` js
      // Ejemplo: Quiero ver el modelo del 2° auto.
@@ -189,7 +192,7 @@ Entonces como accedemos al valor de la propieda de un auto?
 Ejercicio 1: Listar todos los modelos de autos.
 
 ```js
-// modo 1: Sabemos que dataAuto es un arreglo y cada modelo de auto esta dentro de un objeto. Entonces solo necesitamos recorrer la posicion de cada arreglo y asignarle la propiedad modelo.
+// modo 1: Sabemos que dataAuto es un arreglo y cada modelo de auto esta dentro de un objeto. Entonces solo necesitamos recorrer la posición de cada arreglo y asignarle la propiedad modelo.
 
 for(let i = 0; i < dataAuto.length; i++) {
     console.log( dataAuto[i].modelo ); 
@@ -204,12 +207,12 @@ dataAuto.forEach((objeto) => {
 ```
 Ejercicio 2: Listar todos los años de nuestros autos.
 ```js
-// modo 1: lo mismo necesitamos recorrer el arreglo pero tenemos que filtrar los años repetidos.
+// modo 1: Lo mismo necesitamos recorrer el arreglo pero tenemos que filtrar los años repetidos.
 
-// Sin validar los años 2020 se repiten. <= eso no es bueno.
+// Bucle sin validar los años que se repiten. <= eso no es bueno.
 for(let i = 0; i < dataAuto.length; i++) {
     console.log( dataAuto[i].anio ); 
-}// 2020 2020 2017  2015 se repiten los años
+}// 2020 2020 2017  2015 , el año 2020se se repite dos veces.
 
 // Tenemos que validar los años para que no se repitan, para eso lo almacenaremos en un arreglo.
 var aAnios = [];
@@ -247,7 +250,7 @@ aAnios; // [2020, 2017, 2015]  (Y)
 Ejercicio 3: Retorna todos los autos que son de color Red.
 
 ```js
-// esto esta un poco dificil ya que los colores son un arreglo.
+// Un poco dificil ya que los colores son un arreglo.
 // pero si te das cuenta es pareciso al anterio ejercicio.
 // .filter() <= este comando filtra un array y te retorna un nuevo array.
 
@@ -265,16 +268,11 @@ newDataAutoRed = dataAuto.filter((objeto) => {
 newDataAutoRed; // nos retorna 3 objetos [{…}, {…}, {…}] por que uno no tiene color red.
 ```
 
-# Es importante saber como trabajar con un formato JSON.
-
-DEMO en pagina : 
-
+Demo: 
+[Repositorio JSON-or-JASON](https://cristianpumaes6.github.io/JSON-or-JASON/src)
 
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Author : 
 
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[@CristianPumaES6](https://github.com/cristianPumaES6)
+[Repositorio JSON-or-JASON](https://github.com/CristianPumaES6/JSON-or-JASON)
