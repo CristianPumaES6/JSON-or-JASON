@@ -272,8 +272,6 @@ Demo:
 [Repositorio JSON-or-JASON](https://cristianpumaes6.github.io/JSON-or-JASON/src)
 
 
-## Author : 
+## Author :
 
-[@CristianPumaES6](https://github.com/cristianPumaES6)
-
-[Repositorio JSON-or-JASON](https://github.com/CristianPumaES6/JSON-or-JASON)
+- [Repositorio JSON-or-JASON](https://github.com/CristianPumaES6/JSON-or-JASON)
